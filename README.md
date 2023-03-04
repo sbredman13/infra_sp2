@@ -11,7 +11,15 @@ docker - контейниризатор приложений
 ### Запуск проекта в dev-режиме
 - Установите и активируйте виртуальное окружение
 - Установите зависимости из файла requirements.txt
-
+- Создайте файл .env с переменными окружения в директории infra_sp2/infra
+Пример файла и необходимые переменные:
+DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
+DB_NAME=postgres # имя базы данных
+POSTGRES_USER=admin # логин для подключения к базе данных
+POSTGRES_PASSWORD=admin # пароль для подключения к БД (установите свой)
+DB_HOST=db # название сервиса (контейнера)
+DB_PORT=5432 # порт для подключения к БД 
+SECRET_KEY='admin'
 ```
 pip install -r requirements.txt
 ```
